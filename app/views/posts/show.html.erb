@@ -1,2 +1,10 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.submit "Save" %>
+
+<% end %>
