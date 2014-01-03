@@ -1,8 +1,8 @@
 Bloccit::Application.routes.draw do
-  get "welcome/index"
+  
+  resources :posts
 
-  get "welcome/about"
+  match "about" => 'welocme#about', via: :get
 
-  root to: 'welcome#index'  
-
+  root :to => 'welcome#index'
 end
