@@ -23,6 +23,10 @@ def create
   end
 end
 
+def edit
+    @post = Post.find(params[:id])
+  end
+
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
