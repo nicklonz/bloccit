@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     authorize! :create, @post, message: "You need to be signed up to do that."
-    if @post.save
   end
 
 def create
@@ -39,4 +38,3 @@ end
       flash[:error] = "There was an error saving the post. Please try again."
       render :edit
   end
-end
