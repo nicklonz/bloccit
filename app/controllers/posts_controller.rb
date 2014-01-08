@@ -28,16 +28,18 @@ end
  
   def edit
     @post = Post.find(params[:id])
+    authorize! :edit, @post, message: "You need to own the post to edit it."
   end
- 
+
   def update
-     @post = Post.find(params[:id])
-  if @post.update_attributes(params[:post])
+    @post = Post.find(params[:id])
+    authorize! :update, @post, message: "You need to own the post to edit it."
+    if @post.update_attributes(params[:post])
       flash[:notice] = "Post was updated."
       redirect_to @post
-  else
+    else
       flash[:error] = "There was an error saving the post. Please try again."
       render :edit
-      end
+    end
   end
 end
