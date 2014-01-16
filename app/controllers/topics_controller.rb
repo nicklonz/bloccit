@@ -2,8 +2,8 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.paginate(page: params[:page], per_page: 10)
-  end
-
+  
+end
   def new
     @topic = Topic.new
     authorize! :create, @topic, message: "You need to be an admin to do that."
