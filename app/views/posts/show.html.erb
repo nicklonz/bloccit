@@ -9,10 +9,13 @@
     </small>    
     
     <p><%= markdown @post.body %></p>
-    <p><%= image_tag(@post.image_url) if @post.image? %></p>
+    
     <hr/>
 
-    <h2><%= @comments.count %> Comments</h2>
+      <% @comments.each do |comment| %>
+      <%= render partial: 'comments/comments', locals: {comment: comment} %>
+      
+    <% end %>
 
     <%= render @comments %>
 
