@@ -13,11 +13,8 @@
     <hr/>
 
       <% @comments.each do |comment| %>
-      <%= render partial: 'comments/comments', locals: {comment: comment} %>
-      
-    <% end %>
-
-    <%= render @comments %>
+        <%= render partial: 'comments/comments', locals: {comment: comment} %>
+      <% end %>
 
     <% if can? :create, Comment %>
       <hr/>
