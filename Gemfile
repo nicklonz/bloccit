@@ -28,3 +28,4 @@ end
   gem 'fog'
   gem 'figaro'
   gem 'will_paginate', '~> 3.0'
+  gem 'omniauth-facebook'
