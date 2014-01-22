@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
 
-  before_filter: setup
+  before_filter :setup
 
    def setup
     @topic = Topic.find(params[:topic_id])
@@ -21,21 +21,22 @@ class VotesController < ApplicationController
     redirect_to :back
   end
 
+    def setup
+      @topic = Topic.find(params[:topic_id])
+      @post = @topic.posts.find(params[:post_id])
+      authorize! :create, Vote, message: "You need to be a member to vote."
+    
+      @vote = @post.votes.where(user_id: current_user.id).first
+      end
+ 
+ 
+    private
+ 
+    def update_vote(new_value)
     if @vote # if it exists, update it
-      @vote.update_attribute(:value, 1)
+      @vote.update_attribute(:value, new_value)
     else # create it
-      @vote = current_user.votes.create(value: 1, post: @post)
-    end
-    redirect_to :back
-  end
-end
-
-private
-
-  def setup
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
-
-    @vote = @post.votes.where(user_id: current_user.id).first
-  end
+      @vote = current_user.votes.create(value: new_value, post: @post)
+      end
+   end
 end
