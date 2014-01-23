@@ -1,8 +1,8 @@
-<div>
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
   <%= link_to '#', class: 'pull-left' do %>
     <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
   <% end %>
-<div>
+  <div class="media-body">
     <small>
       <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
       <% if can? :destroy, comment %>
@@ -11,4 +11,4 @@
     </small>
     <p><%= comment.body %></p>
   </div>
-</div>
+<% end %>
