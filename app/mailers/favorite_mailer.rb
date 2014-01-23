@@ -10,7 +10,8 @@ class FavoriteMailer < ActionMailer::Base
     @user = user
     @post = post
     @comment = comment
-
+  end
+   
     # New Headers
     headers["Message-ID"] = "<comments/#{@comment.id}@your-app-name.example>"
     headers["In-Reply-To"] = "<post/#{@post.id}@your-app-name.example>"
