@@ -51,4 +51,10 @@ class User < ActiveRecord::Base
   
   private
 
+    def voted(post)
+    self.votes.where(post_id: post.id).first
+  end
+
+  private
+
 end
