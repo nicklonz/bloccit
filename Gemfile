@@ -10,6 +10,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 group :assets do
 
   gem 'sass-rails',   '~> 3.2.3'

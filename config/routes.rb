@@ -10,6 +10,8 @@ Bloccit::Application.routes.draw do
 
   resources :users, only: [:show, :index]
 
+  resources :posts, only: [:index] #this is for 'popular' posts
+
   resources :topics do
     resources :posts, except: [:index], controller: 'topics/posts' do
       resources :comments, only: [:create, :destroy]
