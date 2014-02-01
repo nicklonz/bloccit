@@ -12,9 +12,15 @@
     <p><%= markdown @post.body %></p>
     <%= image_tag(@post.image.thumb.url) if @post.image? %>
 
-    <hr/>
+     <hr/>
+
+    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
+
+    <div class="js-comments">
 
     <%= render partial: 'comments/comment', collection: @comments %>
+
+  </div>
 
     <% if can? :create, Comment %>
     <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
