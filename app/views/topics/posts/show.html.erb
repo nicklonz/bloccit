@@ -21,7 +21,7 @@
     <%= render partial: 'comments/comment', collection: @comments %>
 
   </div>
-
+    </div>
     <% if can? :create, Comment %>
     <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
       <hr/>
@@ -31,7 +31,7 @@
     <% end %>
 
   </div>
-  <div class="span4">
+  <div class="span2">
     <% if can? :edit, @post %>
       <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
     <% end %>
@@ -39,7 +39,7 @@
       <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-large btn-block btn-danger', confirm: 'Are you sure you want to delete this post?' %>
       </div>
 <% end %>
- 
+    </div>
  <div>
       <h3><%= pluralize(@post.points, 'point') %></h3>
       <small>
