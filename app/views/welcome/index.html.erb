@@ -21,3 +21,20 @@
     <p>This is some content about how great point 3 is. You should really use Bloccit because of it! No seriously, it really is amazing and great and you should really check it out.</p>
   </div>
 </div>
+
+<div id="example" style="width: 550px; height: 350px;"></div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+      var word_array = [
+          {text: "Lorem", weight: 15},
+          {text: "Ipsum", weight: 9},
+          {text: "Dolor", weight: 6},
+          {text: "Sit", weight: 7},
+          {text: "Amet", weight: 5}
+      ];
+
+      $(function() {
+        $("#example").jQCloud(word_array);
+      });
+    </script>
