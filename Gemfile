@@ -35,4 +35,4 @@ end
   gem 'figaro'
   gem 'will_paginate', '~> 3.0'
   gem 'omniauth-facebook'
-  gem "jqcloud-rails"
+  gem 'jqcloud-rails'
