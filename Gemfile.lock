@@ -85,6 +85,8 @@ GEM
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
+    jqcloud-rails (1.0.0)
+      jquery-rails
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   faker
   figaro
   fog
+  jqcloud-rails
   jquery-rails
   mini_magick
   omniauth-facebook
