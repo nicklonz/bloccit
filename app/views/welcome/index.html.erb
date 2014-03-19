@@ -26,13 +26,7 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
-      var word_array = [
-          {text: "Lorem", weight: 15},
-          {text: "Ipsum", weight: 9},
-          {text: "Dolor", weight: 6},
-          {text: "Sit", weight: 7},
-          {text: "Amet", weight: 5}
-      ];
+      var word_array = <%= raw(@json_words) %>;
 
       $(function() {
         $("#example").jQCloud(word_array);
